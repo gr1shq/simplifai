@@ -17,7 +17,7 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata({ params }: BlogPostPageProps) {
   const post = blogData.find((post) => post.slug === params.slug);
   if (!post) return {};
 
