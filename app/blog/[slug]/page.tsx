@@ -9,7 +9,7 @@ import type { ContentType } from "@/app/types";
 import { ContentBlock } from "@/app/types";
 import { BlogPost } from "@/app/types";
 
-// Type guards
+// Type guard functions
 function isContentType(type: string): type is ContentType {
   return ['paragraph', 'heading', 'link', 'divider'].includes(type);
 }
@@ -38,14 +38,14 @@ function isBlogPost(post: unknown): post is BlogPost {
   );
 }
 
-// Static paths
+// Generate static paths
 export async function generateStaticParams() {
   return blogData.map((post) => ({
     slug: post.slug,
   }));
 }
 
-// Metadata
+// Generate metadata
 export async function generateMetadata({
   params,
 }: {
@@ -55,6 +55,7 @@ export async function generateMetadata({
   if (!post || !isBlogPost(post)) {
     return {};
   }
+
   return {
     title: `SimplifAI | ${post.title}`,
     description: post.summary,
@@ -66,17 +67,20 @@ export async function generateMetadata({
   };
 }
 
-// Page
+// Blog page props
 type BlogPostPageProps = {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 };
 
+// Page component
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = blogData.find((post) => post.slug === params.slug);
 
   if (!post || !isBlogPost(post)) {
     notFound();
-    return null; // required for TS
+    return null;
   }
 
   return (
