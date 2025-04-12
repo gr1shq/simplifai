@@ -5,6 +5,7 @@ export interface Tool {
     logo: string;
     category: string;
     howToUse: string;
+    how_to_use?: string;
     pros: string[];
     cons: string[];
 }

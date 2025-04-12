@@ -48,7 +48,7 @@ const AffiliateDisclosure = () => {
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="font-medium text-blue-600 mb-2">Clear Labeling</h3>
-                <p className="text-gray-600 text-sm">Affiliate links are marked with a (*) or tagged as "Affiliate Link".</p>
+                <p className="text-gray-600 text-sm">Affiliate links are marked with a (*) or tagged as  &quot;Affiliate Link&quot;.</p>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ const AffiliateDisclosure = () => {
             <div className="border-t border-gray-200 pt-8 mt-12">
               <h3 className="text-lg font-medium text-gray-900 mb-4">Questions?</h3>
               <p>
-                Email us at {' '}
+                Email us at {" "}
                 <a href="mailto:gpentertainment28@gmail.com" className="text-blue-600 hover:underline font-medium">
                   gpentertainment28@gmail.com
                 </a>

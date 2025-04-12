@@ -6,11 +6,12 @@ import Header from '@/app/(components)/Header';
 
 
 async function getToolsByCategory(category: string): Promise<Tool[]> {
-  const res = await import('../../../data/tools.json');
-  return res.default.map((tool: any) => ({
+  const res = await import('../../../data/tools.json') as { default: Tool[] };
+  
+  return res.default.map(tool => ({
     ...tool,
-    howToUse: tool.howToUse || tool.how_to_use || '' // Provide default value
-  })).filter((tool: Tool) => 
+    howToUse: tool.howToUse || tool.how_to_use || ''
+  })).filter(tool => 
     tool.category.toLowerCase() === category.toLowerCase()
   );
 }

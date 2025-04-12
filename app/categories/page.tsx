@@ -8,19 +8,20 @@ import Link from 'next/link';
 import Footer from "../(components)/Footer";
 
 export default function CategoriesPage() {
-    const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   
-    // Sort categories by toolCount (descending) by default
-    const sortedCategories = useMemo(() => {
-      return [...categories].sort((a, b) => b.toolCount - a.toolCount);
-    }, [categories]);
-  
-    const filteredCategories = useMemo(() => {
-      return sortedCategories.filter(category =>
-        category.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        category.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }, [searchQuery, sortedCategories]);
+  // Sort categories by toolCount (descending) - runs once
+  const sortedCategories = useMemo(() => {
+    return [...categories].sort((a, b) => b.toolCount - a.toolCount);
+  }, []); // Empty dependency array since categories is constant
+
+  // Filter based on search - runs when searchQuery changes
+  const filteredCategories = useMemo(() => {
+    return sortedCategories.filter(category =>
+      category.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      category.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery, sortedCategories]);
   
     return (
       <div className="min-h-screen bg-gray-50">
