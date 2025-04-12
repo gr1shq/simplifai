@@ -6,9 +6,9 @@ import BlogContent from "@/app/(components)/BlogContent";
 import blogData from "../../../data/blog.json";
 
 type BlogPostPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
