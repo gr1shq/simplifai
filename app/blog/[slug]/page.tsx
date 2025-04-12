@@ -3,26 +3,50 @@ import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import BlogMeta from "@/app/(components)/BlogMeta";
 import BlogContent from "@/app/(components)/BlogContent";
-import blog from "../../../data/blog.json";
-import type { BlogPost } from "@/app/types";
+import blogData from "../../../data/blog.json";
 import Head from "next/head";
 
-interface BlogParams {
-  params: { slug: string };
+// Define your BlogPost type
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  image?: string;
+  summary: string;
+  content: ContentBlock; // Make sure ContentBlock is defined in your types
 }
 
-export default function BlogPostPage({ params }: BlogParams) {
-  const post = blog.find((item) => item.slug === params.slug) as BlogPost | undefined;
+// For generateStaticParams
+interface BlogParams {
+  slug: string;
+}
 
-  if (!post) return notFound();
+// For the page component props
+interface PageProps {
+  params: BlogParams;
+}
+
+// Generate static paths
+export async function generateStaticParams(): Promise<BlogParams[]> {
+  return blogData.map((post: BlogPost) => ({
+    slug: post.slug
+  }));
+}
+
+export default function BlogPostPage({ params }: PageProps) {
+  const post = blogData.find((post: BlogPost) => post.slug === params.slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
-        <Head>
-            <title>Simplifai | {post.title}</title>
-            <meta name="description" content={post.summary} />
-            
-        </Head>
+      <Head>
+        <title>{`SimplifAI | ${post.title}`}</title>
+        <meta name="description" content={post.summary} />
+      </Head>
+      
       <Header />
       
       <main className="flex-grow py-8 px-4 sm:px-6">
