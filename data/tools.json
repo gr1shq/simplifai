@@ -1,0 +1,274 @@
+[
+    {
+        "name": "Jasper",
+        "description": "AI copywriting assistant for marketing teams.",
+        "url": "https://www.jasper.ai",
+        "logo": "https://logo.clearbit.com/jasper.ai",
+        "category": "writing",
+        "howToUse": "Sign up, choose a content type, input your topic, and let Jasper generate copy.",
+        "pros": ["High-quality marketing content", "Supports multiple tones/styles", "Collaboration features"],
+        "cons": ["Paid only", "May require manual editing for accuracy"]
+    },
+    {
+        "name": "Copy.ai",
+        "description": "Write marketing copy, blogs, and more using AI.",
+        "url": "https://www.copy.ai",
+        "logo": "https://logo.clearbit.com/copy.ai",
+        "category": "writing",
+        "howToUse": "Choose a template, describe what you need, and Copy.ai writes it for you.",
+        "pros": ["Free plan available", "Easy to use", "Good for idea generation"],
+        "cons": ["Limited creativity", "Some outputs need polishing"]
+    },
+    {
+        "name": "GitHub Copilot",
+        "description": "AI code completion inside your IDE.",
+        "url": "https://github.com/features/copilot",
+        "logo": "https://logo.clearbit.com/github.com",
+        "category": "coding",
+        "howToUse": "Install the Copilot extension in VSCode and start typing — suggestions appear automatically.",
+        "pros": ["Saves coding time", "Works in real-time", "Supports multiple languages"],
+        "cons": ["Can suggest incorrect code", "Not free"]
+    },
+    {
+        "name": "Replit Ghostwriter",
+        "description": "AI pair programmer inside Replit.",
+        "url": "https://replit.com/site/ghostwriter",
+        "logo": "https://logo.clearbit.com/replit.com",
+        "category": "coding",
+        "howToUse": "Open a project in Replit and let Ghostwriter autocomplete and explain code as you go.",
+        "pros": ["Built into Replit", "Code explanations", "Beginner-friendly"],
+        "cons": ["Paid feature", "Limited to Replit platform"]
+    },
+    {
+        "name": "Quizlet AI",
+        "description": "Study smarter with AI-generated flashcards.",
+        "url": "https://quizlet.com/features/magic-notes",
+        "logo": "https://logo.clearbit.com/quizlet.com",
+        "category": "students",
+        "howToUse": "Upload your notes and let Quizlet generate flashcards and quizzes.",
+        "pros": ["Fast flashcard generation", "Supports many subjects", "Visual aids"],
+        "cons": ["May miss key concepts", "Free version is limited"]
+    },
+    {
+        "name": "Socratic by Google",
+        "description": "AI homework helper and explainer.",
+        "url": "https://socratic.org",
+        "logo": "https://logo.clearbit.com/socratic.org",
+        "category": "students",
+        "howToUse": "Take a photo of your question and get answers or explanations instantly.",
+        "pros": ["Free to use", "Good for math and science", "Mobile-friendly"],
+        "cons": ["Not detailed enough for complex topics"]
+    },
+    {
+        "name": "Canva Magic Design",
+        "description": "Design anything with AI help.",
+        "url": "https://www.canva.com/magic-design",
+        "logo": "https://logo.clearbit.com/canva.com",
+        "category": "creators",
+        "howToUse": "Go to Canva, choose Magic Design, input your idea or content, and let AI generate design suggestions. Customize as needed.",
+        "pros": [
+            "User-friendly interface",
+            "Great templates",
+            "Seamless editing and collaboration"
+        ],
+        "cons": [
+            "Limited customization on free plan",
+            "Some AI outputs may need manual tweaks"
+        ]
+    },
+    {
+        "name": "Runway ML",
+        "description": "AI-powered creative tools for video & design.",
+        "url": "https://runwayml.com",
+        "logo": "https://logo.clearbit.com/runwayml.com",
+        "category": "creators",
+        "howToUse": "Sign in to Runway ML, select an AI tool (like text-to-video), upload your content or prompt, and generate outputs.",
+        "pros": [
+            "Advanced creative AI models",
+            "Great for video and visual effects",
+            "Easy export options"
+        ],
+        "cons": [
+            "Requires good internet connection",
+            "Can be expensive for high-res exports"
+        ]
+    },
+    {
+        "name": "Tidio",
+        "description": "AI chatbot & live chat for customer support.",
+        "url": "https://www.tidio.com",
+        "logo": "https://logo.clearbit.com/tidio.com",
+        "category": "professionals",
+        "howToUse": "Integrate Tidio on your website, customize chatbot scripts, and let AI handle live customer interactions.",
+        "pros": [
+            "Easy website integration",
+            "Combines live chat and chatbot",
+            "Useful analytics and tracking"
+        ],
+        "cons": [
+            "Free plan is limited",
+            "Some features require technical setup"
+        ]
+    },
+    {
+        "name": "Pictory",
+        "description": "Turn text into videos using AI.",
+        "url": "https://pictory.ai",
+        "logo": "https://logo.clearbit.com/pictory.ai",
+        "category": "video",
+        "howToUse": "Upload a script or blog post, choose a video template, let Pictory auto-generate a video, then fine-tune the result.",
+        "pros": [
+            "Great for content repurposing",
+            "Automatic voiceovers",
+            "No video editing skills required"
+        ],
+        "cons": [
+            "Limited video styles",
+            "Subscription required for full access"
+        ]
+    },
+    {
+        "name": "Synthesia",
+        "description": "Create AI-generated videos with avatars.",
+        "url": "https://www.synthesia.io",
+        "logo": "https://logo.clearbit.com/synthesia.io",
+        "category": "video",
+        "howToUse": "Select an avatar, input your script, choose language and voice, and generate a video with an AI presenter.",
+        "pros": [
+            "Professional-looking avatars",
+            "Multiple languages and voices",
+            "Fast video generation"
+        ],
+        "cons": [
+            "No custom avatars on free tier",
+            "Not ideal for long videos"
+        ]
+    },
+    {
+        "name": "Character.AI",
+        "description": "Chat with AI characters and bots.",
+        "url": "https://character.ai",
+        "logo": "https://logo.clearbit.com/character.ai",
+        "category": "chatbots",
+        "howToUse": "Visit the website, choose or create an AI character, and start chatting with it instantly.",
+        "pros": [
+            "Highly interactive and creative",
+            "Supports user-created bots",
+            "Fun and engaging experience"
+        ],
+        "cons": [
+            "No voice support yet",
+            "Some conversations can be off-topic"
+        ]
+    },
+    {
+        "name": "ChatGPT",
+        "description": "Converse with OpenAI's advanced chatbot.",
+        "url": "https://chat.openai.com",
+        "logo": "https://logo.clearbit.com/openai.com",
+        "category": "chatbots",
+        "pros": [
+          "Human-like conversations",
+          "Useful for brainstorming, coding, learning",
+          "Easy to use interface"
+        ],
+        "cons": [
+          "May provide outdated info",
+          "Needs clear prompts",
+          "Can sometimes 'hallucinate' answers"
+        ],
+        "howToUse": [
+          "Go to chat.openai.com",
+          "Log in or sign up",
+          "Ask a question or give a prompt (e.g. 'Explain relativity like I'm 12')"
+        ]
+      },
+      {
+        "name": "Midjourney",
+        "description": "Create stunning images from text prompts.",
+        "url": "https://www.midjourney.com",
+        "logo": "https://logo.clearbit.com/midjourney.com",
+        "category": "image-generation",
+        "pros": [
+          "High-quality image generation",
+          "Artistic and aesthetic results",
+          "Great for design inspiration"
+        ],
+        "cons": [
+          "Requires Discord to use",
+          "Not free (limited trial)",
+          "Takes time to learn prompt crafting"
+        ],
+        "howToUse": [
+          "Join the Midjourney Discord from midjourney.com",
+          "Use /imagine followed by a prompt (e.g. '/imagine a cyberpunk cityscape at night')",
+          "Upscale or edit your favorite result"
+        ]
+      },
+      {
+        "name": "DALL·E",
+        "description": "OpenAI’s image generator from text.",
+        "url": "https://openai.com/dall-e",
+        "logo": "https://logo.clearbit.com/openai.com",
+        "category": "image-generation",
+        "pros": [
+          "Easy to use interface",
+          "Integration with ChatGPT Pro",
+          "Supports image editing (inpainting)"
+        ],
+        "cons": [
+          "Limited to OpenAI’s content policy",
+          "Less creative than Midjourney sometimes",
+          "Can be slow under high traffic"
+        ],
+        "howToUse": [
+          "Visit openai.com/dall-e",
+          "Enter a text prompt (e.g. 'A cat wearing a space suit on the moon')",
+          "Download or use inpainting to edit areas"
+        ]
+      },
+      {
+        "name": "Notion AI",
+        "description": "Productivity meets AI: write, plan, and organize.",
+        "url": "https://www.notion.so/product/ai",
+        "logo": "https://logo.clearbit.com/notion.so",
+        "category": "productivity",
+        "pros": [
+          "Integrated with Notion workspace",
+          "Great for summarizing and rewriting notes",
+          "Boosts productivity with task suggestions"
+        ],
+        "cons": [
+          "Requires Notion Pro plan",
+          "Limited formatting in AI output",
+          "Still evolving in capabilities"
+        ],
+        "howToUse": [
+          "Go to a Notion page and type / to access AI commands",
+          "Choose actions like summarize, translate, or brainstorm",
+          "Refine or edit the results manually"
+        ]
+      },
+      {
+        "name": "Mem",
+        "description": "AI note-taking tool that helps you remember everything.",
+        "url": "https://mem.ai",
+        "logo": "https://logo.clearbit.com/mem.ai",
+        "category": "productivity",
+        "pros": [
+          "Smart AI suggestions while taking notes",
+          "Fast and lightweight interface",
+          "Connects notes automatically"
+        ],
+        "cons": [
+          "Still in active development",
+          "Limited export/customization options",
+          "Can be overwhelming with auto-tagging"
+        ],
+        "howToUse": [
+          "Sign up at mem.ai",
+          "Start typing your notes",
+          "Use AI features for summaries, tags, and scheduling"
+        ]
+      }
+]

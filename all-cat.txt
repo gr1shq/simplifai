@@ -1,0 +1,149 @@
+[
+    {
+      "icon": "✍️",
+      "name": "Writing Assistants",
+      "description": "AI tools for content creation and editing",
+      "toolCount": 0,
+      "href": "/categories/writing"
+    },
+    {
+      "icon": "💻",
+      "name": "Coding",
+      "description": "AI pair programmers and code generators",
+      "toolCount": 0,
+      "href": "/categories/coding"
+    },
+    {
+      "icon": "🎓",
+      "name": "Students / Learning",
+      "description": "AI tools for learning and education",
+      "toolCount": 0,
+      "href": "/categories/students"
+    },
+    {
+      "icon": "🎨",
+      "name": "Creators (Designers, Writers, etc.)",
+      "description": "AI tools for creative professionals",
+      "toolCount": 0,
+      "href": "/categories/creators"
+    },
+    {
+      "icon": "💼",
+      "name": "Small bussines / Freelancers",
+      "description": "AI tools for professionals and work",
+      "toolCount": 0,
+      "href": "/categories/professionals"
+    },
+    {
+      "icon": "🧘‍♂️",
+      "name": "Personal Life / Life Assistant",
+      "description": "AI tools for productivity and personal growth",
+      "toolCount": 0,
+      "href": "/categories/productivity"
+    },
+    {
+        "icon": "🗣️",
+        "name": "AI Chatbots",
+        "description": "Smart assistants for Q&A, conversations, and help",
+        "toolCount": 0,
+        "href": "/categories/chatbots"
+      },
+      {
+        "icon": "📷",
+        "name": "Image Generation",
+        "description": "AI tools for generating images from text",
+        "toolCount": 0,
+        "href": "/categories/image-generation"
+      },
+      {
+        "icon": "🎬",
+        "name": "Video & Animation",
+        "description": "AI for video editing, animation, or creation",
+        "toolCount": 0,
+        "href": "/categories/video"
+      },
+      {
+        "icon": "🎧",
+        "name": "Voice & Music",
+        "description": "AI tools for music, audio editing, and voiceovers",
+        "toolCount": 0,
+        "href": "/categories/music"
+      },
+      {
+        "icon": "📊",
+        "name": "Data & Analytics",
+        "description": "AI for analyzing and visualizing data",
+        "toolCount": 0,
+        "href": "/categories/data"
+      },
+      {
+        "icon": "🧠",
+        "name": "Mental Health & Wellness",
+        "description": "AI companions for well-being and support",
+        "toolCount": 0,
+        "href": "/categories/wellness"
+      },
+      {
+        "icon": "💬",
+        "name": "Prompt Generators",
+        "description": "Tools that help craft powerful AI prompts",
+        "toolCount": 0,
+        "href": "/categories/prompts"
+      },
+      {
+        "icon": "📚",
+        "name": "Research & Summarizers",
+        "description": "AI to help with reading, summarizing, and studying",
+        "toolCount": 0,
+        "href": "/categories/research"
+      },
+      {
+        "icon": "🛍️",
+        "name": "eCommerce & Dropshipping",
+        "description": "AI tools to help with online selling",
+        "toolCount": 0,
+        "href": "/categories/ecommerce"
+      },
+      {
+        "icon": "📈",
+        "name": "Marketing & SEO",
+        "description": "AI tools for growing and optimizing websites",
+        "toolCount": 0,
+        "href": "/categories/marketing"
+      },
+      {
+        "icon": "📱",
+        "name": "Social Media",
+        "description": "AI tools to create content and manage social media",
+        "toolCount": 0,
+        "href": "/categories/social"
+      },
+      {
+        "icon": "👨‍⚖️",
+        "name": "Legal & Contracts",
+        "description": "AI for document generation and legal help",
+        "toolCount": 0,
+        "href": "/categories/legal"
+      },
+      {
+        "icon": "💰",
+        "name": "Finance & Investing",
+        "description": "AI tools for budgeting, investing, and money tracking",
+        "toolCount": 0,
+        "href": "/categories/finance"
+      },
+      {
+        "icon": "🌐",
+        "name": "Language & Translation",
+        "description": "AI translators and language learning tools",
+        "toolCount": 0,
+        "href": "/categories/translation"
+      },
+      {
+        "icon": "👨‍💻",
+        "name": "No-Code / Automation",
+        "description": "AI that helps build things without coding",
+        "toolCount": 0,
+        "href": "/categories/nocode"
+      }
+]

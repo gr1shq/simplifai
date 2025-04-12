@@ -1,0 +1,65 @@
+[
+    {
+      "icon": "✍️",
+      "name": "Writing Assistants",
+      "description": "AI tools for content creation and editing",
+      "toolCount": 2,
+      "href": "/categories/writing"
+    },
+    {
+      "icon": "💻",
+      "name": "Coding",
+      "description": "AI pair programmers and code generators",
+      "toolCount": 2,
+      "href": "/categories/coding"
+    },
+    {
+      "icon": "🎓",
+      "name": "Students / Learning",
+      "description": "AI tools for learning and education",
+      "toolCount": 2,
+      "href": "/categories/students"
+    },
+    {
+      "icon": "🎨",
+      "name": "Creators (Designers, Writers, etc.)",
+      "description": "AI tools for creative professionals",
+      "toolCount": 2,
+      "href": "/categories/creators"
+    },
+    {
+      "icon": "💼",
+      "name": "Small bussines / Freelancers",
+      "description": "AI tools for professionals and work",
+      "toolCount": 1,
+      "href": "/categories/professionals"
+    },
+    {
+      "icon": "🧘‍♂️",
+      "name": "Personal Life / Life Assistant",
+      "description": "AI tools for productivity and personal growth",
+      "toolCount": 2,
+      "href": "/categories/productivity"
+    },
+    {
+        "icon": "🗣️",
+        "name": "AI Chatbots",
+        "description": "Smart assistants for Q&A, conversations, and help",
+        "toolCount": 2,
+        "href": "/categories/chatbots"
+      },
+      {
+        "icon": "📷",
+        "name": "Image Generation",
+        "description": "AI tools for generating images from text",
+        "toolCount": 2,
+        "href": "/categories/image-generation"
+      },
+      {
+        "icon": "🎬",
+        "name": "Video & Animation",
+        "description": "AI for video editing, animation, or creation",
+        "toolCount": 2,
+        "href": "/categories/video"
+      }
+    ]   
