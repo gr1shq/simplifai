@@ -16,15 +16,15 @@ async function getToolsByCategory(category: string): Promise<Tool[]> {
   );
 }
 
-export default async function CategoryPage({
-  params
-}: {
-  params: { category: string };
-}) {
-  const tools = await getToolsByCategory(params.category);
+export default async function CategoryPage(context: { params: { category: string } }) {
+  const { params } = context;
+
+  const category = params.category;
+
+  const tools = await getToolsByCategory(category);
   if (tools.length === 0) notFound();
 
-  const formattedCategory = params.category
+  const formattedCategory = category
     .replace('-', ' ')
     .replace(/\b\w/g, l => l.toUpperCase());
 
