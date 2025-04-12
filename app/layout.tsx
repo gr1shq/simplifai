@@ -6,9 +6,6 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
   title: "Simplifai | Free AI Tools for Students, Work & Coding",
   description: "Discover the best free AI tools like ChatGPT for students, professionals, and coders. Simplify your life with AI!",
-  other: {
-    'impact-site-verification': '7c06d40d-1be1-46ba-a6f6-f280f2620433'
-  }
 };
 
 export default function RootLayout({
