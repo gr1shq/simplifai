@@ -4,35 +4,23 @@ import Footer from "@/app/(components)/Footer";
 import BlogMeta from "@/app/(components)/BlogMeta";
 import BlogContent from "@/app/(components)/BlogContent";
 import blogData from "../../../data/blog.json";
-import Head from "next/head";
+import type { Metadata } from "next";
+import type { ContentType } from "@/app/types";
+import { ContentBlock } from "@/app/types";
+import { BlogPost } from "@/app/types";
 
-// 1. Strictly typed ContentBlock
-type ContentType = 'paragraph' | 'heading' | 'link' | 'divider';
 
-interface ContentBlock {
-  type: ContentType;
-  text?: string;
-  href?: string;
+
+// 2. Type guard functions
+function isContentType(type: string): type is ContentType {
+  return ['paragraph', 'heading', 'link', 'divider'].includes(type);
 }
 
-// 2. Complete BlogPost interface
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  image?: string;
-  summary: string;
-  content: ContentBlock[];
-}
-
-// 3. Type guard without 'any'
 function isContentBlock(block: unknown): block is ContentBlock {
   if (typeof block !== 'object' || block === null) return false;
-  
   const b = block as Record<string, unknown>;
   return (
-    typeof b.type === 'string' &&
-    ['paragraph', 'heading', 'link', 'divider'].includes(b.type) &&
+    isContentType(b.type as string) &&
     (typeof b.text === 'string' || b.text === undefined) &&
     (typeof b.href === 'string' || b.href === undefined)
   );
@@ -40,7 +28,6 @@ function isContentBlock(block: unknown): block is ContentBlock {
 
 function isBlogPost(post: unknown): post is BlogPost {
   if (typeof post !== 'object' || post === null) return false;
-  
   const p = post as Record<string, unknown>;
   return (
     typeof p.slug === 'string' &&
@@ -53,42 +40,60 @@ function isBlogPost(post: unknown): post is BlogPost {
   );
 }
 
-// 4. Static generation
+// 3. Generate static paths
 export async function generateStaticParams() {
   return blogData.map((post) => ({
     slug: post.slug
   }));
 }
 
-// 5. Page component
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+// 4. Generate metadata
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const post = blogData.find((post) => post.slug === params.slug);
-  
+  if (!post || !isBlogPost(post)) {
+    return {};
+  }
+  return {
+    title: `SimplifAI | ${post.title}`,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      images: post.image ? [{ url: post.image }] : [],
+    },
+  };
+}
+
+// 5. Page component
+export default function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = blogData.find((post) => post.slug === params.slug);
+
   if (!post || !isBlogPost(post)) {
     notFound();
   }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Head>
-        <title>{`SimplifAI | ${post.title}`}</title>
-        <meta name="description" content={post.summary} />
-      </Head>
-      
       <Header />
-      
       <main className="flex-grow py-8 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto mt-20">
-          <BlogMeta 
-            title={post.title} 
-            date={post.date} 
-            image={post.image} 
+          <BlogMeta
+            title={post.title}
+            date={post.date}
+            image={post.image}
             summary={post.summary}
           />
           <BlogContent content={post.content} />
         </div>
       </main>
-
       <Footer />
     </div>
   );

@@ -10,17 +10,19 @@ export interface Tool {
     cons: string[];
 }
 
+export type ContentType = 'paragraph' | 'heading' | 'link' | 'divider';
+
+export interface ContentBlock {
+  type: ContentType;
+  text?: string;
+  href?: string;
+}
+
 export interface BlogPost {
-    slug: string;
-    title: string;
-    date: string;
-    image?: string;
-    summary: string;
-    content: ContentBlock[];
-  }
-  
-  export interface ContentBlock {
-    type: 'paragraph' | 'heading' | 'link' | 'divider';
-    text?: string;
-    href?: string;
-  }
+  slug: string;
+  title: string;
+  date: string;
+  image?: string;
+  summary: string;
+  content: ContentBlock[];
+}
