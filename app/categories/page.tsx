@@ -95,7 +95,7 @@ export default function CategoriesPage() {
           ) : (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">
-                No categories found matching "{searchQuery}"
+                No categories found matching &quot;{searchQuery}&quot;
               </p>
               <button
                 onClick={() => setSearchQuery('')}

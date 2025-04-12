@@ -52,7 +52,7 @@ const TermsOfService = () => {
 
             <h2 className="text-xl font-semibold mt-8 mb-4 text-gray-900">5. Changes</h2>
             <p className="mb-6">
-              We may update these terms at any time. Changes will be posted on this page with an updated "Last Updated" date.
+              We may update these terms at any time. Changes will be posted on this page with an updated &quot;Last Updated&quot; date.
             </p>
 
             <div className="border-t border-gray-200 mt-12 pt-8">

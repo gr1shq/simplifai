@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
             <div className="border-t border-gray-200 mt-12 pt-8">
               <h3 className="text-lg font-medium text-gray-900 mb-4">Changes to This Policy</h3>
               <p>
-                We may update this Privacy Policy periodically. The "Last Updated" date at the top of this page will indicate when changes were made.
+                We may update this Privacy Policy periodically. The &quot;Last Updated&quot; date at the top of this page will indicate when changes were made.
               </p>
             </div>
           </div>

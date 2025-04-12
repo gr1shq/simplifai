@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -12,9 +11,6 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
-const inter = Inter({
-   variable: "--font-inter",
-   subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Simplifai | Free AI Tools for Students, Work & Coding",
