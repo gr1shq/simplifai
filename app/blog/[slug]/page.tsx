@@ -3,26 +3,64 @@ import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import BlogMeta from "@/app/(components)/BlogMeta";
 import BlogContent from "@/app/(components)/BlogContent";
-import blog from "../../../data/blog.json";
-import type { BlogPost } from "@/app/types";
+import blogData from "../../../data/blog.json";
 import Head from "next/head";
 
-interface BlogParams {
-  params: { slug: string };
+// 1. Define your content block type
+type ContentBlock = {
+  type: 'paragraph' | 'heading' | 'link' | 'divider';
+  text?: string;
+  href?: string;
+};
+
+// 2. Define your blog post type
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  image?: string;
+  summary: string;
+  content: ContentBlock[];
 }
 
-export default function BlogPostPage({ params }: BlogParams) {
-  const post = blog.find((item) => item.slug === params.slug) as BlogPost | undefined;
+// 3. Type for page props
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
-  if (!post) return notFound();
+// 4. Type guard function
+function isBlogPost(post: any): post is BlogPost {
+  return (
+    post &&
+    typeof post.slug === 'string' &&
+    typeof post.title === 'string' &&
+    typeof post.date === 'string' &&
+    (typeof post.image === 'string' || post.image === undefined) &&
+    typeof post.summary === 'string' &&
+    Array.isArray(post.content)
+  );
+}
+
+export const dynamic = 'force-static';
+
+export default function BlogPostPage({ params }: PageProps) {
+  // 5. Find and validate the post
+  const rawPost = blogData.find((item) => item.slug === params.slug);
+  const post = isBlogPost(rawPost) ? rawPost : undefined;
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
-        <Head>
-            <title>Simplifai | {post.title}</title>
-            <meta name="description" content={post.summary} />
-            
-        </Head>
+      <Head>
+        <title>{`SimplifAI | ${post.title}`}</title>
+        <meta name="description" content={post.summary} />
+      </Head>
+      
       <Header />
       
       <main className="flex-grow py-8 px-4 sm:px-6">
@@ -40,4 +78,11 @@ export default function BlogPostPage({ params }: BlogParams) {
       <Footer />
     </div>
   );
+}
+
+// 6. Generate static paths
+export async function generateStaticParams() {
+  return blogData.map((post) => ({
+    slug: post.slug
+  }));
 }
