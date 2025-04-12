@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import ToolCard from '@/app/(components)/ToolCard';
 import type { Tool } from '@/app/types';
 import Header from '@/app/(components)/Header';
-import { GetServerSidePropsContext } from 'next';
+import type { GetServerSidePropsContext } from 'next';
 
 async function getToolsByCategory(category: string): Promise<Tool[]> {
   const res = await import('../../../data/tools.json') as { default: Tool[] };
