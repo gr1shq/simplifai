@@ -10,14 +10,7 @@ export interface Tool {
     cons: string[];
 }
 
-export type ContentType = 'paragraph' | 'heading' | 'link' | 'divider';
-
-export interface ContentBlock {
-  type: ContentType;
-  text?: string;
-  href?: string;
-}
-
+// types.ts
 export interface BlogPost {
   slug: string;
   title: string;
@@ -26,3 +19,11 @@ export interface BlogPost {
   summary: string;
   content: ContentBlock[];
 }
+
+export interface ContentBlock {
+  type: ContentType;
+  text?: string;
+  href?: string;
+}
+
+export type ContentType = 'paragraph' | 'heading' | 'link' | 'divider';
