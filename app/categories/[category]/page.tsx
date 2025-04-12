@@ -14,8 +14,8 @@ async function getToolsByCategory(category: string): Promise<Tool[]> {
   );
 }
 
-export default async function CategoryPage({ params }: { params: { category: string } }) {
-  const category = params.category;
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = await params;
 
   if (!category) {
     notFound();
