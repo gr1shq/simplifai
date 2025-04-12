@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation';
 import ToolCard from '@/app/(components)/ToolCard';
 import type { Tool } from '@/app/types';
 import Header from '@/app/(components)/Header';
-
-
+import { GetServerSidePropsContext } from 'next';
 
 async function getToolsByCategory(category: string): Promise<Tool[]> {
   const res = await import('../../../data/tools.json') as { default: Tool[] };
@@ -16,10 +15,20 @@ async function getToolsByCategory(category: string): Promise<Tool[]> {
   );
 }
 
-export default async function CategoryPage(context: { params: { category: string } }) {
+export default async function CategoryPage(context: GetServerSidePropsContext) {
   const { params } = context;
 
-  const category = params.category;
+  if (!params) {
+    notFound();
+    return null;
+  }
+
+  const category = params.category as string;
+
+  if (!category) {
+    notFound();
+    return null;
+  }
 
   const tools = await getToolsByCategory(category);
   if (tools.length === 0) notFound();
