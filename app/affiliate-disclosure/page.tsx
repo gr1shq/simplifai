@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Header from '../(components)/Header';
 import Footer from '../(components)/Footer';
 
@@ -35,7 +34,7 @@ const AffiliateDisclosure = () => {
 
             <h2 className="text-xl font-semibold mt-8 mb-4 text-gray-900">How It Works</h2>
             <ul className="list-disc pl-6 space-y-3 mb-8">
-              <li>We only recommend tools we've <span className="font-medium">personally tested</span> or thoroughly researched</li>
+              <li>We only recommend tools we have <span className="font-medium">personally tested</span> or thoroughly researched</li>
               <li>Commissions help support our team and keep the platform running</li>
               <li>Prices are <span className="font-medium">exactly the same</span> whether you use our links or not</li>
               <li>You never pay more — sometimes we even secure exclusive discounts</li>

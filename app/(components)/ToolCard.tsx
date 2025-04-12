@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiExternalLink, FiThumbsUp, FiThumbsDown } from 'react-icons/fi';
-import Header from './Header';
-import Footer from './Footer';
 
 interface Tool {
   name: string;

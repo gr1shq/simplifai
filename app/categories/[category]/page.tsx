@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import ToolCard from '@/app/(components)/ToolCard';
 import type { Tool } from '@/app/types';
-import Footer from '@/app/(components)/Footer';
 import Header from '@/app/(components)/Header';
 
 
