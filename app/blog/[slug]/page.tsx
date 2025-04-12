@@ -6,14 +6,16 @@ import BlogContent from "@/app/(components)/BlogContent";
 import blogData from "../../../data/blog.json";
 import Head from "next/head";
 
-// 1. Define your content block type
-type ContentBlock = {
-  type: 'paragraph' | 'heading' | 'link' | 'divider';
+// 1. Strictly typed ContentBlock
+type ContentType = 'paragraph' | 'heading' | 'link' | 'divider';
+
+interface ContentBlock {
+  type: ContentType;
   text?: string;
   href?: string;
-};
+}
 
-// 2. Define your blog post type
+// 2. Complete BlogPost interface
 interface BlogPost {
   slug: string;
   title: string;
@@ -23,34 +25,46 @@ interface BlogPost {
   content: ContentBlock[];
 }
 
-// 3. Type for page props
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-// 4. Type guard function
-function isBlogPost(post: any): post is BlogPost {
+// 3. Type guard without 'any'
+function isContentBlock(block: unknown): block is ContentBlock {
+  if (typeof block !== 'object' || block === null) return false;
+  
+  const b = block as Record<string, unknown>;
   return (
-    post &&
-    typeof post.slug === 'string' &&
-    typeof post.title === 'string' &&
-    typeof post.date === 'string' &&
-    (typeof post.image === 'string' || post.image === undefined) &&
-    typeof post.summary === 'string' &&
-    Array.isArray(post.content)
+    typeof b.type === 'string' &&
+    ['paragraph', 'heading', 'link', 'divider'].includes(b.type) &&
+    (typeof b.text === 'string' || b.text === undefined) &&
+    (typeof b.href === 'string' || b.href === undefined)
   );
 }
 
-export const dynamic = 'force-static';
+function isBlogPost(post: unknown): post is BlogPost {
+  if (typeof post !== 'object' || post === null) return false;
+  
+  const p = post as Record<string, unknown>;
+  return (
+    typeof p.slug === 'string' &&
+    typeof p.title === 'string' &&
+    typeof p.date === 'string' &&
+    (typeof p.image === 'string' || p.image === undefined) &&
+    typeof p.summary === 'string' &&
+    Array.isArray(p.content) &&
+    p.content.every(isContentBlock)
+  );
+}
 
-export default function BlogPostPage({ params }: PageProps) {
-  // 5. Find and validate the post
-  const rawPost = blogData.find((item) => item.slug === params.slug);
-  const post = isBlogPost(rawPost) ? rawPost : undefined;
+// 4. Static generation
+export async function generateStaticParams() {
+  return blogData.map((post) => ({
+    slug: post.slug
+  }));
+}
 
-  if (!post) {
+// 5. Page component
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = blogData.find((post) => post.slug === params.slug);
+  
+  if (!post || !isBlogPost(post)) {
     notFound();
   }
 
@@ -78,11 +92,4 @@ export default function BlogPostPage({ params }: PageProps) {
       <Footer />
     </div>
   );
-}
-
-// 6. Generate static paths
-export async function generateStaticParams() {
-  return blogData.map((post) => ({
-    slug: post.slug
-  }));
 }
