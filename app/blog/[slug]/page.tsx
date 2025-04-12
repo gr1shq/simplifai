@@ -1,63 +1,60 @@
-"use client";
-
 import { notFound } from "next/navigation";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import BlogMeta from "@/app/(components)/BlogMeta";
 import BlogContent from "@/app/(components)/BlogContent";
 import blogData from "../../../data/blog.json";
-import type { BlogPost, ContentBlock, ContentType } from "@/app/types";
+import type { Metadata } from "next";
+import type { ContentType } from "@/app/types";
+import { ContentBlock } from "@/app/types";
+import { BlogPost } from "@/app/types";
 
-// Type guard functions
-const isContentType = (type: string): type is ContentType => {
+// Type guards
+function isContentType(type: string): type is ContentType {
   return ['paragraph', 'heading', 'link', 'divider'].includes(type);
-};
+}
 
-const isContentBlock = (block: unknown): block is ContentBlock => {
+function isContentBlock(block: unknown): block is ContentBlock {
+  if (typeof block !== 'object' || block === null) return false;
+  const b = block as Record<string, unknown>;
   return (
-    typeof block === 'object' &&
-    block !== null &&
-    'type' in block &&
-    isContentType((block as { type: string }).type) &&
-    (!('text' in block) || typeof block.text === 'string') &&
-    (!('href' in block) || typeof block.href === 'string')
+    isContentType(b.type as string) &&
+    (typeof b.text === 'string' || b.text === undefined) &&
+    (typeof b.href === 'string' || b.href === undefined)
   );
-};
+}
 
-const isBlogPost = (post: unknown): post is BlogPost => {
+function isBlogPost(post: unknown): post is BlogPost {
+  if (typeof post !== 'object' || post === null) return false;
+  const p = post as Record<string, unknown>;
   return (
-    typeof post === 'object' &&
-    post !== null &&
-    'slug' in post &&
-    typeof post.slug === 'string' &&
-    'title' in post &&
-    typeof post.title === 'string' &&
-    'date' in post &&
-    typeof post.date === 'string' &&
-    'summary' in post &&
-    typeof post.summary === 'string' &&
-    'content' in post &&
-    Array.isArray(post.content) &&
-    post.content.every(isContentBlock)
+    typeof p.slug === 'string' &&
+    typeof p.title === 'string' &&
+    typeof p.date === 'string' &&
+    (typeof p.image === 'string' || p.image === undefined) &&
+    typeof p.summary === 'string' &&
+    Array.isArray(p.content) &&
+    p.content.every(isContentBlock)
   );
-};
+}
 
-// Generate static paths
-export const generateStaticParams = async () => {
+// Static paths
+export async function generateStaticParams() {
   return blogData.map((post) => ({
-    slug: post.slug
+    slug: post.slug,
   }));
-};
+}
 
-// Generate metadata
-export const generateMetadata = async ({
+// Metadata
+export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata> => {
+}): Promise<Metadata> {
   const post = blogData.find((post) => post.slug === params.slug);
-  if (!post || !isBlogPost(post)) return {};
-  
+  if (!post || !isBlogPost(post)) {
+    return {};
+  }
   return {
     title: `SimplifAI | ${post.title}`,
     description: post.summary,
@@ -67,14 +64,19 @@ export const generateMetadata = async ({
       images: post.image ? [{ url: post.image }] : [],
     },
   };
+}
+
+// Page
+type BlogPostPageProps = {
+  params: { slug: string };
 };
 
-// Page component
-const BlogPostPage = ({ params }: { params: { slug: string } }) => {
+export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = blogData.find((post) => post.slug === params.slug);
 
   if (!post || !isBlogPost(post)) {
     notFound();
+    return null; // required for TS
   }
 
   return (
@@ -94,6 +96,4 @@ const BlogPostPage = ({ params }: { params: { slug: string } }) => {
       <Footer />
     </div>
   );
-};
-
-export default BlogPostPage;
+}
