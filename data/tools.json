@@ -270,5 +270,130 @@
           "Start typing your notes",
           "Use AI features for summaries, tags, and scheduling"
         ]
-      }
+      },
+
+
+
+
+
+    {
+      "name": "EssayDone AI",
+      "description": "AI-powered essay writing and academic assistance tool.",
+      "url": "https://essaydone.ai",
+      "logo": "https://logo.clearbit.com/essaydone.ai",
+      "category": "writing",
+      "howToUse": "Enter your essay topic, and AI generates drafts or full essays.",
+      "pros": [
+          "Helps with writer’s block",
+          "Supports citations (APA, MLA, etc.)",
+          "Structured outlines"
+      ],
+      "cons": [
+          "Plagiarism risk if unedited",
+          "Ethical concerns in academia"
+      ]
+  },
+  {
+    "name": "Intellectia.AI",
+    "description": "AI research assistant for data analysis and insights.",
+    "url": "https://intellectia.ai",
+    "logo": "https://logo.clearbit.com/intellectia.ai",
+    "category": "students",
+    "howToUse": "Upload datasets or research questions for AI-generated summaries.",
+    "pros": [
+        "Handles large datasets",
+        "Visual insights (charts, graphs)",
+        "Academic/business use"
+    ],
+    "cons": [
+        "Requires clean data input",
+        "High cost for advanced features"
+    ]
+},
+{
+  "name": "Otter.ai",
+  "description": "AI-powered lecture/meeting transcription tool.",
+  "url": "https://otter.ai",
+  "logo": "https://logo.clearbit.com/otter.ai",
+  "category": "students",
+  "howToUse": "Record lectures or meetings for real-time transcripts.",
+  "pros": [
+      "Speaker identification",
+      "Searchable notes",
+      "Integrates with Zoom"
+  ],
+  "cons": [
+      "Free plan limited to 30 mins/month",
+      "Accuracy drops with accents"
+  ]
+},
+{
+  "name": "Notta AI Notetaker",
+  "description": "AI meeting transcription and notes.",
+  "url": "https://notta.ai",
+  "logo": "https://logo.clearbit.com/notta.ai",
+  "category": "professionals",
+  "howToUse": "Record calls or upload audio for summaries.",
+  "pros": [
+      "Multi-language support",
+      "Team collaboration features"
+  ],
+  "cons": [
+      "No free export options",
+      "Occasional sync delays"
+  ]
+},
+{
+  "name": "My AskAI",
+  "description": "Custom AI chatbot for knowledge bases.",
+  "url": "https://myaskai.com",
+  "logo": "https://logo.clearbit.com/myaskai.com",
+  "category": "chatbots",
+  "howToUse": "Upload FAQs/docs to train a chatbot for your website.",
+  "pros": [
+      "No coding needed",
+      "Cheaper than many alternatives"
+  ],
+  "cons": [
+      "Limited to text responses",
+      "Generic UI"
+  ]
+},
+{
+  "name": "blaze.ai",
+  "description": "AI sales funnel and lead generation tool.",
+  "url": "https://blaze.ai",
+  "logo": "https://logo.clearbit.com/blaze.ai",
+  "category": "marketing-sales",
+  "howToUse": "Integrate with CRM to automate lead scoring and outreach.",
+  "pros": [
+      "A/B testing for campaigns",
+      "Detailed analytics"
+  ],
+  "cons": [
+      "Steep learning curve",
+      "Expensive for startups"
+  ]
+},
+{
+  "name": "Notta AI Notetaker",
+  "description": "AI voice notes and transcription for personal use.",
+  "url": "https://notta.ai",
+  "logo": "https://logo.clearbit.com/notta.ai",
+  "category": "productivity",
+  "howToUse": "Record voice memos or interviews for text conversion.",
+  "pros": [
+      "Offline mode available",
+      "Cloud sync"
+  ],
+  "cons": [
+      "Mobile app bugs",
+      "No video support"
+  ]
+}
+
+
 ]
+
+
+

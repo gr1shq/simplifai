@@ -27,7 +27,7 @@ export default function CategoriesPage() {
       <div className="min-h-screen bg-gray-50">
         <Head>
           <title>AI Tool Categories | SimplifAI</title>
-          <meta name="description" content="Browse all AI tool categories sorted by popularity" />
+          <meta name="description" content="Browse all AI tool categories sorted by popularity, categories like Business, Coding, and Writing Assistants" />
         </Head>
   
         <header>

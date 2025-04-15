@@ -3,7 +3,7 @@
       "icon": "✍️",
       "name": "Writing Assistants",
       "description": "AI tools for content creation and editing",
-      "toolCount": 2,
+      "toolCount": 3,
       "href": "/categories/writing"
     },
     {
@@ -17,7 +17,7 @@
       "icon": "🎓",
       "name": "Students / Learning",
       "description": "AI tools for learning and education",
-      "toolCount": 2,
+      "toolCount": 4,
       "href": "/categories/students"
     },
     {
@@ -31,21 +31,21 @@
       "icon": "💼",
       "name": "Small bussines / Freelancers",
       "description": "AI tools for professionals and work",
-      "toolCount": 1,
+      "toolCount": 2,
       "href": "/categories/professionals"
     },
     {
       "icon": "🧘‍♂️",
       "name": "Personal Life / Life Assistant",
       "description": "AI tools for productivity and personal growth",
-      "toolCount": 2,
+      "toolCount": 3,
       "href": "/categories/productivity"
     },
     {
         "icon": "🗣️",
         "name": "AI Chatbots",
         "description": "Smart assistants for Q&A, conversations, and help",
-        "toolCount": 2,
+        "toolCount": 3,
         "href": "/categories/chatbots"
       },
       {
@@ -61,5 +61,14 @@
         "description": "AI for video editing, animation, or creation",
         "toolCount": 2,
         "href": "/categories/video"
+      },
+
+
+      {
+        "icon": "📈",
+        "name": "Marketing & Sales",
+        "description": "AI tools for lead generation, campaigns and sales automation",
+        "toolCount": 1,
+        "href": "/categories/marketing-sales"
       }
     ]   
