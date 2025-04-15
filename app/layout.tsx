@@ -16,8 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="/favicon.ico" />
-        {/* Google Tag Manager */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      {/* Google Tag Manager */}
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-KE229EQ55C`}
