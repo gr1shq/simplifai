@@ -2,6 +2,7 @@ import BlogCard from '../(components)/BlogCard';
 import blogData from '@/data/blog.json';
 import Header from '../(components)/Header';
 import Footer from '../(components)/Footer';
+import Head from 'next/head';
 
 interface BlogPost {
   slug: string;
@@ -16,6 +17,17 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+
+      <Head>
+      <title>AI Tools Blog - Latest Articles & Insights 2025</title>
+        <meta
+          name="description"
+          content="Explore our AI tools blog for articles, tutorials, and insights on the best AI and productivity tools for content creators and businesses in 2025."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://simplifai-pearl.vercel.app/blog" />
+      </Head>
+
       <Header />
       
       <main className="flex-grow">

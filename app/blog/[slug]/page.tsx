@@ -31,6 +31,10 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       description: post.summary,
       images: post.image ? [{ url: post.image }] : [],
     },
+    robots: {
+      index: true,
+      follow: true
+    }
   };
 }
 
