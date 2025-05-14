@@ -1,114 +1,122 @@
-"use client"
+"use client";
 
-import Head from "next/head";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Or any other icon library
 import Link from "next/link";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Categories", href: "/categories" },
+    { name: "Blog", href: "/blog" },
+    { name: "Quiz", href: "/quiz" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
 
   return (
     <>
-      <Head>
-        <title>Simplifai | Free AI Tools for Students, Work & Coding</title>
-        <meta name="description" content="Discover the best free AI tools like ChatGPT for students, professionals, and coders. Simplify your life with AI!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
-      <header className="fixed w-full bg-white z-50 shadow-sm">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <div className="flex h-16 items-center justify-between">
+      {/* Desktop Header */}
+      <header className="sticky top-0 bg-slate-900 shadow-sm text-gray-300 z-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[env(safe-area-inset-top)]">
+          <div className="flex justify-between items-center py-4 h-16">
             {/* Logo */}
-            <h1 className="text-2xl font-bold font-mono">
-  <span className="text-gray-800">Simplif</span>
-  <span className="text-blue-600 ">AI</span>
-</h1>
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold text-white">
+                Simplif<span className="text-teal-500">AI</span>
+              </span>
+            </Link>
+
             {/* Desktop Navigation */}
             <nav className="hidden md:block">
-              <ul className="flex items-center gap-6">
-                <li className="hover:text-blue-600 transition-colors">
-                  <Link href="/">Home</Link>
-                </li>
-                <li className="hover:text-blue-600 transition-colors">
-                  <Link href="/categories">Categories</Link>
-                </li>
-                <li className="hover:text-blue-600 transition-colors">
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li className="hover:text-blue-600 transition-colors">
-                  <Link href="/about">About</Link>
-                </li>
-                <li className="hover:text-blue-600 transition-colors">
-                  <Link href="/contact">Contact</Link>
-                </li>
+              <ul className="flex items-center gap-6 lg:gap-8">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-teal-500 transition-colors text-base font-medium"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
 
-            {/* Desktop CTA Button */}
-            <div className="hidden md:block">
-                <Link href="/categories">
-              <button className="rounded-lg bg-black px-4 py-2 text-white hover:bg-gray-800 transition-colors">
-                Find your AI tools
-              </button>
-                </Link>
+            {/* Desktop CTAs */}
+            <div className="hidden md:flex items-center gap-4">
+              <Link href="/quiz">
+                <button className="rounded-lg bg-teal-500 px-4 py-2 text-white font-semibold hover:bg-teal-600 transition-all hover:scale-105 focus:ring-2 focus:ring-teal-500">
+                  Take the Quiz
+                </button>
+              </Link>
+              <Link href="/categories">
+                <button className="rounded-lg bg-white px-4 py-2 text-gray-800 font-semibold hover:bg-gray-100 transition-all hover:scale-105 focus:ring-2 focus:ring-teal-500">
+                  Find AI Tools
+                </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-gray-700 hover:text-black"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <div className="w-6 flex flex-col gap-1.5">
+                <span
+                  className={`h-0.5 w-full bg-gray-300 transition-all ${
+                    isOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`h-0.5 w-full bg-gray-300 transition-all ${
+                    isOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`h-0.5 w-full bg-gray-300 transition-all ${
+                    isOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </div>
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white pb-4 shadow-lg">
-            <div className="space-y-1 px-4 pt-2">
-              <Link
-                href="/"
-                className="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-50"
-              >
-                Home
-              </Link>
-              <Link
-                href="/categories"
-                className="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-50"
-              >
-                Categories
-              </Link>
-              <Link
-                href="/blog"
-                className="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-50"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/about"
-                className="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-50"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-50"
-              >
-                Contact
-              </Link>
-            </div>
-            <div className="px-4 pt-4">
-                <Link href="/categories">
-              <button className="w-full rounded-lg bg-black px-4 py-2 text-white hover:bg-gray-800">
-                Find your AI tools
-              </button>
-                </Link>
-            </div>
-          </div>
-        )}
       </header>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 z-40 bg-slate-900 transition-all duration-300 ease-in-out transform ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        } md:hidden pt-16 px-6`}
+      >
+        <nav className="flex flex-col space-y-6 text-gray-300">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-xl font-medium text-gray-300 hover:text-teal-500 transition-colors py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="flex flex-col gap-4 pt-4">
+            <Link href="/quiz" onClick={() => setIsOpen(false)}>
+              <button className="w-full rounded-lg bg-teal-500 px-4 py-2 text-white font-semibold hover:bg-teal-600 transition-all hover:scale-105 focus:ring-2 focus:ring-teal-500">
+                Take the Quiz
+              </button>
+            </Link>
+            <Link href="/categories" onClick={() => setIsOpen(false)}>
+              <button className="w-full rounded-lg bg-white px-4 py-2 text-gray-800 font-semibold hover:bg-gray-100 transition-all hover:scale-105 focus:ring-2 focus:ring-teal-500">
+                Find AI Tools
+              </button>
+            </Link>
+          </div>
+        </nav>
+      </div>
     </>
   );
 };
