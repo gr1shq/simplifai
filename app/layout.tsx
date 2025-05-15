@@ -17,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
       <link rel="icon" href="/favicon.ico"/>
+      <meta name="p:domain_verify" content="6e4839e55417c91cde9cc4634a94973e"/>
       {/* Google Tag Manager */}
         <Script
           strategy="afterInteractive"
