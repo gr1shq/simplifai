@@ -63,7 +63,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://pinterest.com/simplifai"
+                href="https://pinterest.com/simplifaii"
                 className="text-gray-400 hover:text-teal-500 transition-all hover:scale-110"
                 target="_blank"
                 rel="noopener noreferrer"
